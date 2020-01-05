@@ -7,7 +7,6 @@ PKGS=(ffmpeg_64bit_osx lame_64bit_osx)
 
 # Install the pkg files
 mkdir /tmp/pkg_installer
-ls /tmp/fog/$NAME
 for pkg in "${PKGS[@]}"
 do
     # Copy the pkg to a local folder on the OSX client
