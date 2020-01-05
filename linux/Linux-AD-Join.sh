@@ -38,5 +38,5 @@ printf "[User]\nLanguage=\nXSession=$XSESSION\nSystemAccount=true\n" | tee /var/
 # AD local admin GPO integration (this only affects polkit, for full admin access the user must be in sudo group too)
 printf "[AD Integration]\nIdentity=unix-group:$POLKIT_GPO\nAction=*\nResultActive=yes\n" | tee /var/lib/polkit-1/localauthority/20-org.d/ad-integration.pkla
 
-# Disable authentication with FQDN (remove the need for @birralee.local when logging in)
+# Disable authentication with FQDN (remove the need for @domain.local when logging in)
 sed -i "/use_fully_qualified_names = True/c\use_fully_qualified_names = False" /etc/sssd/sssd.conf
