@@ -5,13 +5,15 @@ APP="audacity"
 NAME="audacity"
 PKGS=(ffmpeg_64bit_osx lame_64bit_osx)
 
-# Install ffmpeg and libmp3lame
+# Install the pkg files
 mkdir /tmp/pkg_installer
 ls /tmp/fog/$NAME
 for pkg in "${PKGS[@]}"
 do
+    # Copy the pkg to a local folder on the OSX client
+    # as the .pkg files cannot run from a network share
     rsync -aPuv /tmp/fog/$NAME/$pkg.pkg /tmp/pkg_installer/
-    #installer -pkg /tmp/pkg_installer/$pkg.pkg -target /
+    installer -pkg /tmp/pkg_installer/$pkg.pkg -target /
 done
 rmdir /tmp/pkg_installer
 
