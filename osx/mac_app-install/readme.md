@@ -1,4 +1,4 @@
-# Mac App Install
+# Mac App Install Snap-in
 This script serves the function of working as an app installer for OSX clients as long as you have the DMG or PKG file for the program.
 
 All the files and folders in the smb folder are meant as examples and are supposed to contain their corresponding DMG and PKG files.
