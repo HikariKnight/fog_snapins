@@ -25,7 +25,7 @@ SUDO_GPO="gpo unix admin"
 # Add sudo GPO for use with users that should not have sudo access across all decives in the domain
 # In order to give global sudo access across all unix devices, add the users to an AD group named sudo
 # Comment out the line below to require the users to be in the AD group named sudo in order to get sudo access
-echo "'%$SUDO_GPO'  ALL=(ALL) ALL" | tee /etc/sudoers.d/gpo_localadmin
+echo "\"%$SUDO_GPO\""  ALL=(ALL) ALL" | tee /etc/sudoers.d/gpo_localadmin
 
 # DO NOT PUT THIS PASSWORD IN VARIABLES!
 echo "domainpassword" | realm join -U $ADJOIN_USER $DOMAIN_FQDN
