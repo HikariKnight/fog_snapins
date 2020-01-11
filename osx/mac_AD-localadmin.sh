@@ -4,4 +4,5 @@
 ADMIN_GROUPS="Enterprise Admins,Domain Admins,GPO Local Admin"
 ###
 
-dsconfigad -groups "$ADMIN_GROUPS"
+# Enable mobile accounts (offline caching) and apply local admin groups
+dsconfigad -mobile enable -groups "$ADMIN_GROUPS"
